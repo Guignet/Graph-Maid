@@ -26,5 +26,24 @@ A -->|1| B
 etc ...
 ```
 
-## Problem not fixed yet 
-if you have more than 26 vertices it will name it in the ASCII order (example: A = 65 so if you have 30 vertices your last one will be ^)
+## Problem not fixed yet
+- if you have more than 26 vertices it will name it in the ASCII order (example: A = 65 so if you have 30 vertices your last one will be ^)
+
+- if you don't put a number for the edges it will just write it.
+(example: if you put [12,A] at one line it will write A -->|A| B)
+
+- if you write you matrix like this :
+[0,1,12][6,0,3][1,2,0]
+it will do :
+
+graph LR
+A((0))
+A -->|1| B
+A -->|12| C
+A -->|6| D
+A -->|3| F
+A -->|1| G
+A -->|2| H
+so be carefull of how you write your matrix.
+
+- if it has more vertices than edges (or more edges than vertices) it will run anyway (but that's not a real adjency matrix)
