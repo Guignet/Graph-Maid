@@ -10,7 +10,7 @@ MF.close()
 countV = 0
 AV = ord('A')
 
-GF = open("Graph.md",'a')
+GF = open("Graph.md",'w')
 GF.write("```mermaid\n")
 
 GF.write("graph LR\n")
@@ -50,15 +50,16 @@ for E in VM.split():
 
 
         elif  c == ']':
+            print("end "+chr(AV)+" VERT == 0 ",VERT=="0")
             print("next vertex ")
-            if int(VERT) != "0":
+            if VERT != "0":
                 GF.write(chr(AV)+" -->|"+ VERT+ "| "+chr(ord('A')+countE)+"\n")
                 VERT ="" #init VERT for the next edge value
                 countE += 1;
             else:
                 VERT ="" #init VERT for the next edge value
                 countE += 1;
-                
+
 
         else:#
             VERT += c # we add char c in VERT
