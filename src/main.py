@@ -1,3 +1,5 @@
+import markdown
+
 # open the File : Graph.matrix and convert into a matrix (Vector)
 MF = open("Graph.matrix","r")
 # print(MF.read())
@@ -11,6 +13,9 @@ countV = 0
 AV = ord('A')
 
 GF = open("Graph.md",'w')
+# GF.write('""""')
+
+# GF.write("~~~mermaid\n")
 GF.write("```mermaid\n")
 
 GF.write("graph LR\n")
@@ -66,6 +71,15 @@ for E in VM.split():
     AV += 1
     countV += 1
 print(countV)
-
 GF.write("```")
+# GF.write("~~~")
+# GF.write('""""')
 GF.close()
+
+
+# convertion from md to pdf
+# PDF = open("Graph.md","r")
+# PDFr = PDF.read()
+# html = markdown.markdown(PDFr, extensions = ['md_mermaid'])
+# ToPDF = open('Graph.html','w')
+# ToPDF.write(html)
