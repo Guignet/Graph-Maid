@@ -13,7 +13,9 @@ AV = ord('A') #name of the first vertex
 
 GF = open("Graph.md",'w')
 # GF.write('""""')
+
 # GF.write("~~~mermaid\n")
+GF.write("```mermaid\n")
 
 GF.write("```mermaid\n") #start of the md file
 GF.write("graph LR\n")
