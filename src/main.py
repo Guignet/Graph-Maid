@@ -1,4 +1,6 @@
 import markdown
+# import pdfkit
+import pdfcrowd
 
 # open the File : Graph.matrix and read it in VM
 MF = open("Graph.matrix","r")
@@ -15,8 +17,6 @@ GF = open("Graph.md",'w')
 # GF.write('""""')
 
 # GF.write("~~~mermaid\n")
-GF.write("```mermaid\n")
-
 GF.write("```mermaid\n") #start of the md file
 GF.write("graph LR\n")
 
@@ -70,10 +70,14 @@ GF.write("```")
 GF.close()
 
 
-# convertion from md to pdf
+# convertion from md to html then pdf
 PDF = open("Graph.md","r")
 PDFr = PDF.read()
 html = markdown.markdown(PDFr, extensions = ['md_mermaid'])
 ToPDF = open('Graph.html','w')
 ToPDF.write(html)
 ToPDF.write('<script type="text/javascript" src="mermaid.min.js"></script>')
+# pdfkit.from_file('Graph.html', 'Graph.pdf')
+client = pdfcrowd.HtmlToPdfClient('demo', 'ce544b6ea52a5621fb9d55f8b542d14d')
+
+client.convertFileToFile('Graph.html', 'Graph.pdf')

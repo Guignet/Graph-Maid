@@ -4,10 +4,11 @@
 Graph'Maid is basicaly a code that can translate an adjancy matrix of a Graph in mermaid.
 It can use a matrix from a file or directly from your code.
 It write on a file which name is Graph.md by default.
+It also write a Graph.html files so you can print it into a pdf file.
 
 ## How to use it
 Write an adjency matrix in the file name Graph.matrix in the form :
-```mermaid
+```
 
 [edge,edge,edge...,edge]
 [edge,edge,edge...,edge]
@@ -21,7 +22,7 @@ If you put only 0 for an edge it will skip it.
 Then juste do make in a linux terminal in the Folder src/.
 It will write in the file Graph.md the mermaid representation of the Graph in the form :
 
-```mermaid
+```
 A ((0))
 B ((1))
 ...
@@ -59,8 +60,8 @@ A -->|2| H
 - if it has more vertices than edges (or more edges than vertices) it will run anyway (but that's not a real adjency matrix)
 
 
-## From md to PDF
-For this part i am using 2 things :
+## From md to html
+For this part you will need :
 the package markdown for pyhton
 ```
 pip install markdown
@@ -71,6 +72,4 @@ pip install md_mermaid
 ```
 and the mermaid script https://unpkg.com/mermaid@8.1.0/dist/ mermaid.min.js (who is in the Folder src/)
 
-and ...
-
-it will convert the file Graph.md into Graph.html and then convert from HTML to PDF (this last part is to do)
+it will permit you to convert the file Graph.md into Graph.html
