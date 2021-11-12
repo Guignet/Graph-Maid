@@ -70,6 +70,6 @@ the extension md_mermaid
 ```
 pip install md_mermaid
 ```
-and the mermaid script https://unpkg.com/mermaid@8.1.0/dist/ mermaid.min.js (who is in the Folder src/)
+and the mermaid script https://unpkg.com/mermaid@8.1.0/dist/ mermaid.min.js (which is in the Folder src/)
 
 it will permit you to convert the file Graph.md into Graph.html
